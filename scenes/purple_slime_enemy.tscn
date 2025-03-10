@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://bslxex3v0c04p"]
+
+[ext_resource type="Script" path="res://scripts/purple_slime_enemy.gd" id="1_hn3mo"]
+[ext_resource type="Texture2D" uid="uid://0xk75i0iknj0" path="res://sprites/Purple Slime Spritesheet.png" id="2_umetx"]
+[ext_resource type="PackedScene" uid="uid://c1ax1jt3ybj7m" path="res://scenes/killzone.tscn" id="3_agt8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33p5a"]
+atlas = ExtResource("2_umetx")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81ap3"]
+atlas = ExtResource("2_umetx")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6wau"]
+atlas = ExtResource("2_umetx")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltlii"]
+atlas = ExtResource("2_umetx")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lieb0"]
+atlas = ExtResource("2_umetx")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tapn5"]
+atlas = ExtResource("2_umetx")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k4h3"]
+atlas = ExtResource("2_umetx")
+region = Rect2(144, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpas0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33p5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81ap3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6wau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltlii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lieb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tapn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k4h3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sclkk"]
+radius = 11.0496
+
+[node name="purple_slime_enemy" type="CharacterBody2D"]
+script = ExtResource("1_hn3mo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mpas0")
+autoplay = "default"
+frame = 3
+frame_progress = 0.281272
+
+[node name="killzone" parent="." instance=ExtResource("3_agt8v")]
+scale = Vector2(0.870294, 0.797331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 3)
+scale = Vector2(0.479902, 0.529644)
+shape = SubResource("CircleShape2D_sclkk")

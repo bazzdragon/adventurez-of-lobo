@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://bee6ac57takj8"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_jfsct"]
+[ext_resource type="Theme" uid="uid://3lvj1pcqoytn" path="res://theme/theme.tres" id="1_olkof"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00147, 1.00973)
+script = ExtResource("1_jfsct")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 7.98822
+offset_top = 18.8168
+offset_right = 47.9882
+offset_bottom = 58.8168
+scale = Vector2(28.306, 15.0305)
+theme = ExtResource("1_olkof")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 4.4801
+offset_top = 3.03096
+offset_right = 380.48
+offset_bottom = 43.031
+scale = Vector2(0.0495047, 0.159874)
+theme_override_constants/separation = 200
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Walk right"
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "D"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 4.19789
+offset_top = 8.89519
+offset_right = 384.198
+offset_bottom = 48.8952
+scale = Vector2(0.0505812, 0.173067)
+theme_override_constants/separation = 220
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+text = "Walk left"
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+text = "A"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 4.26844
+offset_top = 14.0346
+offset_right = 401.268
+offset_bottom = 54.0346
+scale = Vector2(0.056298, 0.203456)
+theme_override_constants/separation = 205
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer3"]
+layout_mode = 2
+text = "jump"
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer3"]
+layout_mode = 2
+text = "spacebar"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 4.30372
+offset_top = 21.2826
+offset_right = 712.304
+offset_bottom = 61.2826
+scale = Vector2(0.0416526, 0.221163)
+theme_override_constants/separation = 260
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer4"]
+layout_mode = 2
+text = "slow down"
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer4"]
+layout_mode = 2
+text = "shift"
+
+[node name="Back" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1.1994
+offset_top = 29.1894
+offset_right = 553.199
+offset_bottom = 69.1894
+scale = Vector2(0.06955, 0.205659)
+theme = ExtResource("1_olkof")
+text = "Back to main menu"
+
+[connection signal="pressed" from="Panel/Back" to="." method="_on_button_pressed"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8y841slnu13"]
+
+[ext_resource type="Theme" uid="uid://3lvj1pcqoytn" path="res://theme/theme.tres" id="2_aioui"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_jmdhd"]
+
+[node name="PauseMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_aioui")
+script = ExtResource("2_jmdhd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.25098, 0.25098, 0.705882)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -114.0
+offset_right = 134.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03931, 1.39407)
+theme = ExtResource("2_aioui")
+
+[node name="resume" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="restart" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="main_menu" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Main menu"
+
+[connection signal="pressed" from="GridContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="GridContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="GridContainer/main_menu" to="." method="_on_main_menu_pressed"]

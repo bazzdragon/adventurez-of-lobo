@@ -1,0 +1,130 @@
+[gd_scene load_steps=3 format=3 uid="uid://bee6ac57takj8"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_jfsct"]
+[ext_resource type="Theme" uid="uid://3lvj1pcqoytn" path="res://theme/theme.tres" id="1_olkof"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00147, 1.00973)
+script = ExtResource("1_jfsct")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 7.99996
+offset_top = 18.9999
+offset_right = 47.9999
+offset_bottom = 58.9999
+scale = Vector2(28.5439, 15.616)
+theme = ExtResource("1_olkof")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 3.81868
+offset_top = 5.95544
+offset_right = 555.819
+offset_bottom = 45.9555
+scale = Vector2(0.0495047, 0.159874)
+theme_override_constants/separation = 200
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+text = "Walk right"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+text = "D"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 4.41425
+offset_top = 10.9503
+offset_right = 544.414
+offset_bottom = 50.9503
+scale = Vector2(0.0505812, 0.173067)
+theme_override_constants/separation = 220
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/HBoxContainer2"]
+layout_mode = 2
+text = "Walk left"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer2"]
+layout_mode = 2
+text = "A"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 4.48432
+offset_top = 15.625
+offset_right = 593.484
+offset_bottom = 55.625
+scale = Vector2(0.056298, 0.203456)
+theme_override_constants/separation = 205
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/HBoxContainer3"]
+layout_mode = 2
+text = "jump"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer3"]
+layout_mode = 2
+text = "spacebar"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 4.27412
+offset_top = 21.7085
+offset_right = 712.274
+offset_bottom = 61.7085
+scale = Vector2(0.0416526, 0.221163)
+theme_override_constants/separation = 260
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer4"]
+layout_mode = 2
+text = "slow down"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/HBoxContainer4"]
+layout_mode = 2
+text = "shift"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 4.27412
+offset_top = 28.4324
+offset_right = 712.274
+offset_bottom = 68.4324
+scale = Vector2(0.0416526, 0.221163)
+theme_override_constants/separation = 420
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer5"]
+layout_mode = 2
+text = "pause"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/HBoxContainer5"]
+layout_mode = 2
+text = "esc"
+
+[node name="Back" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 12.3669
+offset_top = 34.772
+offset_right = 425.367
+offset_bottom = 74.772
+scale = Vector2(0.0337153, 0.098554)
+theme = ExtResource("1_olkof")
+text = "Start Game"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 6.86662
+offset_top = -0.192104
+offset_right = 262.867
+offset_bottom = 31.8079
+scale = Vector2(0.100422, 0.182705)
+text = "CONTROLS"
+
+[connection signal="pressed" from="CanvasLayer/Panel/Back" to="." method="_on_button_pressed"]

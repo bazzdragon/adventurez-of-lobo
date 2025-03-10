@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddfvylf3dpqny"]
+
+[ext_resource type="Script" path="res://scripts/coins.gd" id="1_ei0uw"]
+[ext_resource type="Texture2D" uid="uid://b1egp1hk4gckq" path="res://MonedaD.png" id="2_j1wwi"]
+[ext_resource type="Script" path="res://scripts/green_gems.gd" id="3_2lh00"]
+[ext_resource type="Texture2D" uid="uid://dmahniwgj27xo" path="res://Coin_Gems/spr_coin_strip4.png" id="4_uk62s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wybdo"]
+atlas = ExtResource("2_j1wwi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tilhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wybdo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sis2h"]
+atlas = ExtResource("4_uk62s")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyh7e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sis2h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="coin_counter" type="CanvasLayer"]
+
+[node name="coins" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 4016.0
+offset_bottom = 1510.0
+scale = Vector2(0.0396862, 0.0407845)
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 1101
+text = ":0"
+script = ExtResource("1_ei0uw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(27, 34)
+scale = Vector2(3.23529, 2.74243)
+sprite_frames = SubResource("SpriteFrames_tilhv")
+
+[node name="green_gems" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 68.0
+offset_right = 4442.0
+offset_bottom = 1568.0
+scale = Vector2(0.0430622, 0.0410526)
+theme_override_colors/font_color = Color(0, 0.823529, 0, 1)
+theme_override_font_sizes/font_size = 1101
+text = ":0/3"
+script = ExtResource("3_2lh00")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, 91)
+scale = Vector2(4.03151, 3.1579)
+sprite_frames = SubResource("SpriteFrames_wyh7e")

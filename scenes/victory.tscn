@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctafyufmwkug6"]
+
+[ext_resource type="Theme" uid="uid://3lvj1pcqoytn" path="res://theme/theme.tres" id="1_1iyr8"]
+[ext_resource type="Script" path="res://scripts/victory.gd" id="1_gwuu4"]
+[ext_resource type="Texture2D" uid="uid://brydi0s8e2ve0" path="res://sprites/victory.jpg" id="2_e712q"]
+[ext_resource type="Script" path="res://scripts/collected_coins.gd" id="4_v4mjt"]
+[ext_resource type="Script" path="res://scripts/collected_green_gems.gd" id="5_ji547"]
+
+[node name="victory_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwuu4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Victory" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(577, 322.5)
+scale = Vector2(0.9, 0.893056)
+texture = ExtResource("2_e712q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = 134.0
+offset_right = 116.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1iyr8")
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Menubutton" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Main menu"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="collected_coins" type="Label" parent="CanvasLayer"]
+offset_left = 55.0
+offset_top = 262.0
+offset_right = 759.0
+offset_bottom = 294.0
+size_flags_horizontal = 4
+theme = ExtResource("1_1iyr8")
+script = ExtResource("4_v4mjt")
+metadata/_edit_use_anchors_ = true
+
+[node name="green_gems" type="Label" parent="CanvasLayer"]
+offset_left = 55.0
+offset_top = 316.0
+offset_right = 887.0
+offset_bottom = 348.0
+size_flags_horizontal = 4
+theme = ExtResource("1_1iyr8")
+script = ExtResource("5_ji547")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 275.0
+offset_top = 200.0
+offset_right = 883.0
+offset_bottom = 232.0
+theme = ExtResource("1_1iyr8")
+text = "YOU WON THE GAME!!!"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Menubutton" to="." method="_on_menubutton_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
